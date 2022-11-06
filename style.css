@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: blueviolet;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url(./clown.gif);
+  background-color: rgba(241, 156, 177, 255);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+}
+
+.joke-textbox {
+  position: relative;
+  bottom: 46%;
+  background-color: rgba(241, 156, 177, 255);
+  width: 50%;
+  font-family: Calibri, sans-serif;
+  font-size: 1.5rem;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  font-weight: 1000;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+
+button {
+  cursor: pointer;
+  font-family: Calibri, sans-serif;
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  top: 20%;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button:active {
+  transform: scale(95%);
+}
+
+button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .joke-textbox {
+    width: 90%;
+  }
+}
